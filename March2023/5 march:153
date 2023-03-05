@@ -1,0 +1,32 @@
+  class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int start=0,end=nums.size()-1, mid=start+(end-start)/2;
+        int n=nums.size();
+        while(start<end)
+        {
+           // mid=start+(end-start)/2;
+            
+            int next=(mid+1)%n;
+            int prev=(mid+n-1)%n;
+            if(nums[mid]<next&&nums[mid]<prev)
+            {
+                return nums[mid];
+            }
+            else if(nums[end]>nums[mid])
+            {
+                  end=mid-1;
+                //start=mid+1;
+            }
+
+            else
+            {
+                start=mid+1;
+
+               // end=mid-1;
+            }
+        mid=start+(end-start)/2;
+        }
+        return -1;
+    }
+};
