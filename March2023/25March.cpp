@@ -49,3 +49,51 @@ public:
       return ans;  
     }
 };
+
+
+
+class Solution {
+public:
+int duplicate(int i,int j,vector<int>nums)
+{
+    map<int,int>mp;
+    int k=j-i+1;
+    for(int x=i;x<=j;x++)
+    {
+        mp[nums[x]]++;
+    }
+    if(mp.size()==k)return 1;
+    return 0;
+   
+}
+
+    long long maximumSubarraySum(vector<int>& arr, int k)
+    {
+     long long int sum=0;
+     long long int maxi=0;
+     int i=0;
+     int j=0;
+     int size=arr.size();
+     while(j<size)
+     {
+         sum=sum+arr[j];
+
+         if(j-i+1<k)
+         {
+             j++;
+         }
+         else if(j-i+1==k)
+         {
+             if(duplicate(i,j,arr))
+             {
+                 maxi=max(sum,maxi);
+             }
+             sum=sum-arr[i];
+             i++;
+             j++;
+         }
+     }
+     return maxi;
+
+    }
+};
