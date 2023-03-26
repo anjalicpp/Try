@@ -161,3 +161,43 @@ public:
       return ans;  
     }
 };
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+
+111. Minimum Depth of Binary Tree
+
+class Solution {
+public:
+int fun(TreeNode* root)
+        {
+         if(root==NULL)
+        {
+            return 0;
+        }
+         int rh= fun(root->right);
+        int lh= fun(root->left);
+        if(lh==0||rh==0)
+        return 1+lh+rh;
+       // int rh= fun(root->right);
+        return min(lh,rh)+1;    
+
+        }    
+    int minDepth(TreeNode* root) {
+        if(root==NULL)
+        {
+            return 0;
+        }
+        return fun(root);
+    }
+};
