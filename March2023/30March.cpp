@@ -50,3 +50,45 @@ public:
         return ans;
     }
 };
+1323. Maximum 69 Number
+Easy
+
+class Solution {
+public:
+    int maximum69Number (int num) {
+        if(num==6||num==9)return 9;
+     vector<int> v;
+     while(num)
+     {
+         v.push_back(num%10);
+         num=num/10;
+     }
+     reverse(v.begin(),v.end());
+     int i=0,j=0;
+     int k=2;
+     while(j<v.size())
+     {
+         if(j-i+1<k)
+         {j++;}
+         
+         else if(j-i+1==k)
+         {
+             if(v[i]==6)
+             {v[i]=9;break;}
+             else if(v[j]==6)
+             {
+                 v[j]=9;break;
+             }
+             j++;
+             i++;
+         }
+     }
+
+     int ans=0;
+     for(int i=0;i<v.size();i++)
+     {
+         ans=ans*10+v[i];
+     }
+     return ans;
+    }
+};
