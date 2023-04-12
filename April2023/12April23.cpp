@@ -39,3 +39,48 @@ public:
         return ans;
     }
 };
+
+
+
+
+----------------------------------------------
+ class Solution {
+public:
+    string simplifyPath(string path) {
+        int flag=0;
+        stack<char>st;
+        string ans="";
+        for(auto it:path)
+        {
+            st.push(it);
+            if(st.top()=='/')
+            {
+                flag=!flag;
+                if(flag==0)
+                {
+                    st.pop();
+                }
+            }
+            else if(st.top()=='.')
+            {
+                st.pop();
+                if(st.top()=='.')
+                {
+                    while(st.size()>0)
+                    {
+                        st.pop();
+                    }
+                }
+            }
+          
+        }
+        while(st.size()>0)
+        {
+            ans.push_back(st.top());
+            st.pop();
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
+--------------------------------------------------------
