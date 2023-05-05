@@ -43,3 +43,49 @@ public:
         return ans;
     }
 };
+
+2379. Minimum Recolors to Get K Consecutive Black Blocks
+Easy
+522
+15
+Companies
+You are given a 0-indexed string blocks of length n, where blocks[i] is either 'W' or 'B', representing the color of the ith block. The characters 'W' and 'B' denote the colors white and black, respectively.
+
+You are also given an integer k, which is the desired number of consecutive black blocks.
+
+In one operation, you can recolor a white block such that it becomes a black block.
+
+Return the minimum number of operations needed such that there is at least one occurrence of k consecutive black blocks.
+
+ 
+
+class Solution {
+public:
+    int minimumRecolors(string blocks, int k) {
+     int i=0,j=0;
+     int count=0;
+     int ans=INT_MAX;
+     int size=blocks.length();
+     while(j<size)
+     {
+         if(blocks[j]=='W')
+         count++;
+
+         if(j-i+1<k)
+         {
+             j++;
+         }
+         else if(j-i+1==k)
+         {
+             ans=min(count,ans);
+             if(blocks[i]=='W')
+             {
+                 count--;
+             }
+             i++;j++;
+         }
+     }
+     return ans;
+
+    }
+};
