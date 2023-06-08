@@ -8,3 +8,22 @@ public:
        return count; 
     }
 };
+
+
+
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int countn=0;
+        int countp=0;
+
+        for(auto i:nums)
+        
+        {
+            if(i<0)countn++;
+            else if(i>0)countp++;
+        }
+        int maxi= max(countn,countp);
+        return maxi;
+    }
+};
