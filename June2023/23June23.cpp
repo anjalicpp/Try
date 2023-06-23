@@ -20,3 +20,29 @@ public:
         return int(val);
     }
 };
+2119. A Number After a Double Reversal
+Easy
+class Solution {
+public:
+    bool isSameAfterReversals(int num) {
+     int val=num;
+     int rem=0;
+     int rev1=0,rev2=0;
+     while(val)
+     {
+         rem=val%10;
+         rev1=rev1*10+rem;
+         val=val/10;
+     } 
+     while(rev1)
+     {
+         rem=rev1%10;
+         rev2=rev2*10+rem;
+         rev1=rev1/10;
+     }   
+     if(num==rev2)return true;
+     return false;
+
+      
+    }
+};
