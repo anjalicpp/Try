@@ -34,3 +34,19 @@ public:
       
     }
 };
+
+Intuition
+If you pass all testcases in the first go, you must either be a freak or a cheat.
+Well doesn't matter, lemme explain my own thought process:
+
+Count number of instances where s[i]!=goal[i]
+Each time s[i]!=goal[i], store both unequal characters
+(Eg: ab & ba), then you'll first store {a,b} and then {b,a}
+After doing this, you have 3 cases:
+
+If instances≠2instances ≠ 2instances
+
+=2 then return false
+If instances=2instances = 2instances=2, check if:
+If instances=0instances = 0instances=0, like in case of s="aa" and goal="aa",
+-> In this case, strings are same, if there is a character with frequency more than 1 (has duplicates), you can exchange the duplicates to get the same exact string!
