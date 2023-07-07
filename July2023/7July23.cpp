@@ -1,6 +1,32 @@
 class Solution {
 public:
     int maxConsecutiveAnswers(string answerKey, int k) {
+        /*BETTER SOLUTION:
+         //BETTER SOLUTION:
+    int i=0;
+    int j=0;
+    int t=0;
+    int f=0;
+    int maxi=0;
+
+
+    while(j<answerKey.length())
+    {
+        if(answerKey[j]=='T')t++;
+        else f++;
+
+        while(t>k&&f>k)
+        {
+            if(answerKey[i]=='T')
+            t--;
+            else f--;
+            i++;
+        }
+        maxi=max(maxi,j-i+1);
+        j++;
+    }
+    return maxi;
+        */
       int i=0;
       int j=0;
       int maxi=0;
@@ -64,3 +90,28 @@ public:
         return maxi;
     }
 };
+
+ //BETTER SOLUTION:
+    int i=0;
+    int j=0;
+    int t=0;
+    int f=0;
+    int maxi=0;
+
+
+    while(j<answerKey.length())
+    {
+        if(answerKey[j]=='T')t++;
+        else f++;
+
+        while(t>k&&f>k)
+        {
+            if(answerKey[i]=='T')
+            t--;
+            else f--;
+            i++;
+        }
+        maxi=max(maxi,j-i+1);
+        j++;
+    }
+    return maxi;
