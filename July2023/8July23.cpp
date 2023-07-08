@@ -79,3 +79,54 @@ public:
         return maxi;
     }
 };
+**************************************************
+  2461. Maximum Sum of Distinct Subarrays With Length K
+Medium
+841
+11
+Companies
+You are given an integer array nums and an integer k. Find the maximum subarray sum of all the subarrays of nums that meet the following conditions:
+
+The length of the subarray is k, and
+All the elements of the subarray are distinct.
+Return the maximum subarray sum of all the subarrays that meet the conditions. If no subarray meets the conditions, return 0.
+
+A subarray is a contiguous non-empty sequence of elements within an array.
+
+ 
+class Solution {
+public:
+
+    long long maximumSubarraySum(vector<int>& arr, int k)
+    {
+     long long int sum=0;
+     long long int maxi=0;
+     int i=0;
+     int j=0;
+     map<int,int>mp;
+
+     int size=arr.size();
+     while(j<size)
+     {
+         mp[arr[j]]++;
+         sum+=arr[j];
+         if(j-i+1==k)
+         {
+             if(mp.size()==k)
+            {
+                 maxi=max(maxi,sum);
+            }
+
+             sum=sum-arr[i];
+             if(mp[arr[i]]==1)
+             mp.erase(arr[i]);
+             else mp[arr[i]]--;
+             i++;
+             
+         }
+          j++;
+     }
+     return maxi;
+
+    }
+};
