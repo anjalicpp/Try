@@ -23,14 +23,15 @@ public:
             maxi=max(maxi,sum);
             if(sum<0)
             {
-               /* while(sum<0)
+               /*//first method
+               while(sum<0)
                 {
                      maxi=max(maxi,sum);
                 
                  sum=sum-nums[i];
                   i++;  
                 } */
-                sum=0;
+               // sum=0;//second method
             }
              
                 j++;
