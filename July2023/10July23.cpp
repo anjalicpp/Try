@@ -1,3 +1,48 @@
+111. Minimum Depth of Binary Tree
+Easy
+6.5K
+1.2K
+Companies
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+Note: A leaf is a node with no children
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+int fun(TreeNode* root)
+        {
+         if(root==NULL)
+        {
+            return 0;
+        }
+         int rh= fun(root->right);
+        int lh= fun(root->left);
+        if(lh==0||rh==0)
+        return 1+lh+rh;
+       // int rh= fun(root->right);
+        return min(lh,rh)+1;    
+
+        }    
+    int minDepth(TreeNode* root) {
+        if(root==NULL)
+        {
+            return 0;
+        }
+        return fun(root);
+    }
+};  
 2600. K Items With the Maximum Sum
 Easy
 211
