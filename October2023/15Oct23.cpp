@@ -14,3 +14,22 @@ void inorder(Node* root,vector<int>&nodes){
         newroot->right=createhbst(mid+1,right,inorder);
         return newroot;
     }
+
+.......................................................................
+
+        class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int n=s.length();
+        int m=t.length();
+        int j=0;
+     for(int i=0;i<m&&j<n;i++)
+     {
+         if(s[j]==t[i])
+         {
+             j++;
+         }
+     }  
+     return (j==n); 
+    }
+};
