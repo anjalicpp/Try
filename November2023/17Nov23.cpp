@@ -20,3 +20,6 @@ public:
         return ans;
     }
 };
+
+Total Leetcode Questions=285
+    Medium=119
