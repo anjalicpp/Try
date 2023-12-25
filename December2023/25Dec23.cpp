@@ -1,3 +1,4 @@
+91. Decode Ways
 class Solution {
 public:
      int numDecodingsTopDown(string s, int index, vector<int>& memo) {
@@ -29,3 +30,5 @@ public:
         return numDecodingsTopDown(s, 0, memo);
     }
 };
+
+2974. Minimum Number Game
