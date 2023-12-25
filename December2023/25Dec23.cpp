@@ -32,3 +32,20 @@ public:
 };
 
 2974. Minimum Number Game
+
+class Solution {
+public:
+    vector<int> numberGame(vector<int>& nums) {
+       sort(nums.begin(),nums.end());
+       vector<int>ans;
+
+       for(int i=0;i<nums.size();)
+       {
+           ans.push_back(nums[i+1]);
+           ans.push_back(nums[i]);
+           i=i+2;
+       }
+       return ans;
+        
+    }
+};
