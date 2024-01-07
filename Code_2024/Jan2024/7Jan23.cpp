@@ -1,6 +1,6 @@
 class Solution {
 public: 
-static int r;/needs to be intialised outside the class to work
+static int r;//needs to be intialised outside the class to work
 static bool comp(const vector<int>&a,const vector<int>&b){
      return (a[r]>b[r]);
 }
