@@ -1,3 +1,5 @@
+2259. Remove Digit From Number to Maximize Result
+
 class Solution {
 public:
     string removeDigit(string number, char digit) {
