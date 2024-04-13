@@ -1,3 +1,5 @@
+496. Next Greater Element I
+
 class Solution {
 public:
  
