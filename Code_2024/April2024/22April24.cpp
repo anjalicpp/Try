@@ -1,3 +1,4 @@
+6. Zigzag Conversion
 class Solution {
 public:
     string convert(string s, int numRows) {
