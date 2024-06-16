@@ -29,7 +29,7 @@ public:
             numo=numo-(deno<<count);
         }
 
-        if(quot==(1<<31)&&sign==true)
+        if(quot==(1<<31)&&sign==true)//edge cases
         {
             return INT_MAX;
         }
@@ -42,3 +42,5 @@ public:
 
     }
 };
+T.C:(logn)2
+S.C:O(1)
